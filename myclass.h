@@ -8,7 +8,8 @@
 #import <objc/Object.h>
 
 @interface MyClass: Object {
-        int times;
-    }
-    -(void) displayMsg:(char *)message lines:(int)qtd;
+		int lines;
+	}
+	-(void) setTimes:(int)times;
+	-(void) displayMsg:(char *)message;
 @end
