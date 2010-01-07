@@ -26,10 +26,10 @@
 
 		for (i = 0; i < lines; i++) {
 			if (i > 0) {
-				printf("%s %d times!\n", message, i+1);
+				printf("%s %d times!\n", message, i + 1);
 			}
 			else {
-				printf("%s %d time!\n", message, i+1);
+				printf("%s %d time!\n", message, i + 1);
 			}
 		}
 	}
