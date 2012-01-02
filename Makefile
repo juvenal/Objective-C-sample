@@ -5,10 +5,19 @@
 #
 #
 
-CC = gcc
-CFLAGS = -O3 -Wall
-LIBOBJC = -l objc
-LIBTHRD = -l pthread
+platform:=$(shell uname | tr [:upper:] [:lower:])
+
+ifeq ($(platform),darwin)
+    CC = clang
+    CFLAGS = -O3 -Wall -D__$(platform)__
+    LIBOBJC = -framework Foundation
+    LIBTHRD = -l pthread
+else
+    CC = gcc
+    CFLAGS = -O3 -Wall
+    LIBOBJC = -l objc
+    LIBTHRD = -l pthread
+endif
 
 all: test-objc test-c
 
