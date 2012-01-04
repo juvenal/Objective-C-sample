@@ -41,3 +41,5 @@ clean:
 
 cleano:
 	rm -rf *.o
+
+# vim: set ts=8 ai:
