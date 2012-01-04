@@ -6,23 +6,16 @@
  */
 
 #ifdef __darwin__
-#import <Foundation/Foundation.h>
-
-@interface MyClass: NSObject {
-		int lines;
-	}
-	-(void) setTimes:(int)times;
-	-(void) displayMsg:(char *)message;
-@end
-
+  #import <Foundation/Foundation.h>
+  #define BASECLASS NSObject
 #else
-#import <objc/Object.h>
+  #import <objc/Object.h>
+  #define BASECLASS Object
+#endif
 
-@interface MyClass: Object {
+@interface MyClass: BASECLASS {
 		int lines;
 	}
 	-(void) setTimes: (int)times;
 	-(void) displayMsg: (char *)message;
 @end
-
-#endif
