@@ -6,8 +6,6 @@
  *
  */
 
-#include <stdio.h>
-#include <stdlib.h>
 #import "myclass.h"
 
 @implementation MyClass

@@ -5,6 +5,9 @@
  *
  */
 
+#import <stdio.h>
+#import <stdlib.h>
+
 #ifdef __darwin__
     #import <Foundation/Foundation.h>
     #define BASECLASS NSObject
