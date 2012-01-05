@@ -8,7 +8,7 @@
 #import <stdio.h>
 #import <stdlib.h>
 
-#ifdef __darwin__
+#if defined (__darwin__) || defined (__GNUStep__)
     #import <Foundation/Foundation.h>
     #define BASECLASS NSObject
 #else

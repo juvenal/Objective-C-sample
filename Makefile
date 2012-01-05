@@ -13,10 +13,18 @@ ifeq ($(platform),darwin)
     LIBOBJC = -framework Foundation
     LIBTHRD = -l pthread
 else
-    CC = gcc
-    CFLAGS = -O3 -Wall
-    LIBOBJC = -l objc
-    LIBTHRD = -l pthread
+    baselib:=$(shell [[ -f /usr/include/Foundation/Foundation.h ]] && echo "GNUStep")
+    ifeq ($(baselib),GNUStep)
+        CC = clang
+        CFLAGS = -O3 -Wall -D__$(baselib)__
+        LIBOBJC = -l gnustep-base
+        LIBTHRD = -l pthread
+    else
+        CC = gcc
+        CFLAGS = -O3 -Wall
+        LIBOBJC = -l objc
+        LIBTHRD = -l pthread
+    endif
 endif
 
 all: test-objc test-c
