@@ -22,7 +22,7 @@
 	-(void) setTimes: (int)times;
 	-(void) displayMsg: (char *)message;
 	-(void) displayMsg: (char *)message
-                     times: (int)times;
+				 times: (int)times;
 @end
 
 /* vim: set ts=4 ai: */

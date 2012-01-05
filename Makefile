@@ -15,9 +15,9 @@ ifeq ($(platform),darwin)
 else
     baselib:=$(shell [[ -f /usr/include/Foundation/Foundation.h ]] && echo "GNUStep")
     ifeq ($(baselib),GNUStep)
-        CC = clang
+        CC = gcc
         CFLAGS = -O3 -Wall -D__$(baselib)__
-        LIBOBJC = -l gnustep-base
+        LIBOBJC = -l gnustep-base -l objc
         LIBTHRD = -l pthread
     else
         CC = gcc
