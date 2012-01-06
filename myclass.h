@@ -23,6 +23,8 @@
 	-(void) displayMsg: (char *)message;
 	-(void) displayMsg: (char *)message
 				 times: (int)times;
+    -(void) showString: (NSString *)string
+				 times: (NSNumber *)times;
 @end
 
 /* vim: set ts=4 ai: */

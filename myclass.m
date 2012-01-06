@@ -52,6 +52,21 @@
 			}
 		}
 	}
+
+	-(void) showString: (NSString *)string
+				 times: (NSNumber *)times {
+		int i;
+
+		for (i = 0; i < [times intValue]; i++) {
+			if (i > 0) {
+				NSLog(@"%@ %d times!", string, i + 1);
+			}
+			else {
+				NSLog(@"%@ %d time!", string, i + 1);
+			}
+		}
+	}
+
 @end
 
 /* vim: set ts=4 ai: */
