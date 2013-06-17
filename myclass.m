@@ -53,6 +53,10 @@
 		}
 	}
 
+	/**
+	 *
+	 *
+	 */
 	-(void) showString: (NSString *)string
 				 times: (NSNumber *)times {
 		int i;
