@@ -13,7 +13,7 @@
 int main(int argc, char *argv[]) {
 	// Two classes to compare initialization methods
 	MyClass *myclass = [[MyClass alloc] init]; // Objective-C class init format
-	MyClass *myclass2 = [MyClass new];         // C++ class init format (alloc and init together)
+	MyClass *myclass2 = [MyClass new];         // C++ class init like (alloc and init together)
 	// Auxiliar number object
 	NSNumber *timesValue;
 	// First method call
@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 	// Multiple parameters message passing
 	[myclass2 displayMsg: "Hello world! Here we are" times: 15];
 	// End of sample code
-	return 0;
+	return EXIT_SUCCESS;
 }
 
 /* vim: set ts=4 ai: */

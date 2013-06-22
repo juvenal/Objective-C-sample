@@ -5,7 +5,7 @@
 #
 #
 
-platform:=$(shell uname | tr [:upper:] [:lower:])
+platform := $(shell uname | tr [:upper:] [:lower:])
 
 ifeq ($(platform),darwin)
     CC = clang
@@ -13,7 +13,7 @@ ifeq ($(platform),darwin)
     LIBOBJC = -framework Foundation
     LIBTHRD = -l pthread
 else
-    baselib:=$(shell [[ -f /usr/include/Foundation/Foundation.h ]] && echo "GNUStep")
+    baselib := $(shell [[ -f /usr/include/Foundation/Foundation.h ]] && echo "GNUStep")
     ifeq ($(baselib),GNUStep)
         CC = gcc
         CFLAGS = -O3 -Wall -D__$(baselib)__ -fconstant-string-class=NSConstantString
