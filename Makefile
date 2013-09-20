@@ -5,6 +5,8 @@
 #
 #
 
+SHELL := /bin/bash
+
 platform := $(shell uname | tr [:upper:] [:lower:])
 
 ifeq ($(platform),darwin)

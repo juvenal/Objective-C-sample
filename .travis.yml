@@ -1,5 +1,4 @@
 language:
 - c
 - objective-c
-script: make
-
+script: make all
