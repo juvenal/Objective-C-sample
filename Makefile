@@ -18,7 +18,8 @@ else
     baselib := $(shell [[ -f /usr/include/Foundation/Foundation.h ]] && echo "GNUStep")
     ifeq ($(baselib),GNUStep)
         CC = gcc
-        CFLAGS = -O3 -Wall -D__$(baselib)__ -fconstant-string-class=NSConstantString
+        CFLAGS = -O3 -Wall -D__$(baselib)__
+        OBJCFLAGS = -fconstant-string-class=NSConstantString
         LIBOBJC = -l gnustep-base -l objc
         LIBTHRD = -l pthread
     else
@@ -32,13 +33,13 @@ endif
 all: test-objc test-c
 
 test-objc: myclass.o test-objc.o
-	$(CC) $(CFLAGS) -o $(@) $(?) $(LIBOBJC) $(LIBTHRD)
+	$(CC) $(CFLAGS) $(OBJCFLAGS) -o $(@) $(?) $(LIBOBJC) $(LIBTHRD)
 
 myclass.o: myclass.m
-	$(CC) $(CFLAGS) -c $(?) -o $(@)
+	$(CC) $(CFLAGS) $(OBJCFLAGS) -c $(?) -o $(@)
 
 test-objc.o: test.m
-	$(CC) $(CFLAGS) -c $(?) -o $(@) 
+	$(CC) $(CFLAGS) $(OBJCFLAGS) -c $(?) -o $(@) 
 
 test-c: test-c.o
 	$(CC) $(CFLAGS) -o $(@) $(?) $(LIBTHRD)
